@@ -5,12 +5,7 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     git
 
-# التأكد من أن pip3 يعمل باستخدام alias
-RUN ln -s /usr/bin/python3 /usr/bin/python && \
-    ln -s /usr/bin/pip3 /usr/bin/pip
-
-# تثبيت مكتبة PyYAML
-RUN pip install --no-cache-dir PyYAML
+RUN pip3 install PyYAML 
 
 COPY feed.py /usr/bin/feed.py
 
